@@ -1,5 +1,5 @@
 class Craps
-  require "dice"
+  # require "dice"
 
   attr_reader :win_state, :rolls
 
@@ -48,6 +48,12 @@ class Craps
           self.win_state = true
         elsif last_roll == 7
           self.win_state = false
+        end
+        if
+          self.win_state = true
+          puts "You win!"
+        else
+          puts "You lose."
         end
         break unless win_state.nil?
       end
