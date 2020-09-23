@@ -5,7 +5,6 @@ class Craps
 
   @@number_of_games = 0 
   @@number_of_wins = 0
-  @@number_of_losses = 0
   class << self
     def number_of_games
       @@number_of_games
@@ -16,7 +15,7 @@ class Craps
     end
 
     def losses
-      @@number_of_losses
+      @@number_of_games - @@number_of_wins
     end
   end
 
@@ -29,8 +28,7 @@ class Craps
     roll
     determine_win
     increment_number_of_games
-    increment_number_of_wins
-    increment_number_of_losses
+    increment_number_of_wins if win_state
     win_state
   end
 
@@ -79,14 +77,6 @@ class Craps
   end
 
   def increment_number_of_wins
-    if self.win_state == true
-      @@number_of_wins += 1
-    end
-  end
-  
-  def increment_number_of_losses
-    if self.win_state == false
-      @@number_of_losses += 1
-    end
+    @@number_of_wins += 1
   end
 end
