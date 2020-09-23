@@ -13,6 +13,7 @@ loop do
   craps.rolls.each do |roll|
     puts "You rolled #{roll}!"
   end
+
   display_win_or_lose(craps.win_state)  
   print "Do you want to play again? [y, n]: "
   choice = gets.chomp.upcase
