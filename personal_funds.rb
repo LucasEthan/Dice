@@ -19,5 +19,5 @@ class PersonalFunds
 
   private
 
-  attr_accessor :balance
+  attr_writer :balance
 end

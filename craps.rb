@@ -3,7 +3,7 @@ class Craps
 
   attr_reader :win_state, :rolls
 
-  @@number_of_games = 0 
+  @@number_of_games = 0
   @@number_of_wins = 0
   class << self
     def number_of_games
