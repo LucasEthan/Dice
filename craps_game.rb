@@ -45,7 +45,7 @@ loop do
     # convert bet to cents before deducting from personalFunds
     personal_funds.deduct(bet * 100)
   end
-  if !personal_funds.zero_balance
+  if !personal_funds.zero_balance?
     print "Do you want to play again? [y, n]: "
     choice = gets.chomp.upcase
     break if choice == "N"

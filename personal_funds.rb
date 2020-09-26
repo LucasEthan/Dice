@@ -18,7 +18,7 @@ class PersonalFunds
   end
 
   def zero_balance?
-    balance.zero
+    balance.zero?
   end
 
   private
