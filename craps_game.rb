@@ -16,7 +16,12 @@ begin
     puts "You have #{personalFunds.balance_in_euros}"
     print "How much do you want to bet: "
     bet = Integer(gets)
-    
+
+    raise(BetError, "You must enter a positive bet") unless bet.positive?
+
+  rescue ArgumentError
+  
+
     craps = Craps.new
     puts "\nPress ENTER to play craps"
     gets
@@ -44,9 +49,6 @@ begin
     break if choice == "N"
   end
 
-
-rescue BetError > e
-  raise BetError, "You must enter a valid bet. Try again."
+rescue BetError => e
   puts e.message
-  retry
 end
