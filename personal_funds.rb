@@ -17,6 +17,10 @@ class PersonalFunds
     balance / 100.to_f
   end
 
+  def zero_balance?
+    balance.zero
+  end
+
   private
 
   attr_writer :balance
