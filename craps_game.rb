@@ -6,16 +6,13 @@ require_relative "personal_funds"
 
 include CrapsHelper
 
-class BetError < StandardError
-end
-
 # initial funds is 1000 euros
 personal_funds = PersonalFunds.new(100_000)
 loop do
   begin
     puts "You have #{personal_funds.balance_in_euros}"
     print "How much do you want to bet: "
-    bet = get_bet
+    bet = input_bet(personal_funds)
     
   rescue ArgumentError
     puts "You must input a valid bet"

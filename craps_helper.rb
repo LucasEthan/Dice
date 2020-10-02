@@ -1,6 +1,9 @@
 module CrapsHelper
 
 
+  class BetError < StandardError
+  end
+
   def display_win_or_lose(win_state)
     if win_state
       puts "You win"
@@ -18,9 +21,10 @@ module CrapsHelper
   def pause_game
   end
 
-  def get_bet
+  def input_bet(personal_funds)
     bet = Integer(gets)
     raise(BetError, "You must enter a positive bet") unless bet.positive?
     raise(BetError, "You can't enter a bet more than #{personal_funds.balance_in_euros}") if bet > personal_funds.balance_in_euros
+    bet
   end
 end
